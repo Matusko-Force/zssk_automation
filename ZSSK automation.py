@@ -9,11 +9,6 @@ chrome_options.add_experimental_option("detach", True) #special options
 
 driver = webdriver.Chrome(options=chrome_options)
 
-
-
-
-
-
 driver.get('https://predaj.zssk.sk/search') #Opening zssk page
 time.sleep(2)
 COOKIESbutton = driver.find_element(By.ID,"c-p-bn").click()# clicking cookies button
@@ -52,7 +47,7 @@ time.sleep(3)
 driver.find_element(By.ID,"wagonThumb-0-0-8").click()# cliking on the wagon you want
 time.sleep(3)
 
-element = driver.find_element(By.XPATH,"/html/body/div[1]/div[2]/div[2]/div[3]/div[3]/div[1]/form[1]/div/div/div/div/div/div/div/div/div[1]/div[2]/div/div/div[2]/div[1]/div[2]/div[6]/div/div/svg/svg[44]/metadata/place") #sleecting seat 
+element = driver.find_element(By.XPATH,"/html/body/div[2]/div/div[2]/div[3]/div[3]/div[1]/form[1]/div/div/div/div/div/div/div/div/div[1]/div[2]/div/div/div[2]/div[1]/div[2]/div[6]/div/div//*[name()='svg']/*[*[local-name()='text']='94']") #sleecting seat 
 time.sleep(3)
 ActionChains(driver).move_to_element(element).click().perform()
 time.sleep(3)
